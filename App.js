@@ -1,10 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet} from 'react-native';
-import Navigator from "./app/navigation";
+import "react-native-gesture-handler";
+import App from "./app/index";
 
-export default function App() {
-  return (
-    <Navigator />
-  );
-}
+export default App;

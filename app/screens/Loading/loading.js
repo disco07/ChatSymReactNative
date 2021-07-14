@@ -1,12 +1,27 @@
-import React from 'react';
-import {Image, View} from "react-native";
+import React, {useEffect} from 'react';
+import {ActivityIndicator, Image, Text, View} from "react-native";
 import styles from "./styles";
 import {Images} from "@config";
 
-const Loading = () => {
+const Loading = ({navigation}) => {
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.replace("SignIn");
+        }, 500)
+    }, [])
     return (
-        <View style={[styles.container, {backgroundColor: "#161d31"}]}>
-            <Image source={Images.logo} />
+        <View style={[styles.container, {backgroundColor: "#ffd"}]}>
+            <Image source={Images.logo} style={styles.logo} />
+            <View>
+                <Text>Messenger</Text>
+            </View>
+            <ActivityIndicator
+                size="large"
+                color="#000"
+                style={{
+                    marginTop: 20,
+                }}
+            />
         </View>
     );
 };

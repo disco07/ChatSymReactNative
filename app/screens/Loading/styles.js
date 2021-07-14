@@ -5,5 +5,9 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    logo: {
+        height: 100,
+        width: 100
     }
 })
