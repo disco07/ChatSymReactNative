@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Text, TextInput, TouchableOpacity, View} from "react-native";
 import styles from "./styles";
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -12,15 +12,16 @@ export default function SignIn() {
             </View>
             <View style={styles.input}>
                 <TextInput
+                    label="Email ID"
                     style={styles.textInput}
-                    placeholder={'email'}
+                    placeholder={'Email'}
                 />
                 <TextInput
                     style={styles.textInput}
-                    placeholder={'email'}
+                    placeholder={'Password'}
                 />
                 <TouchableOpacity>
-                    <Text style={{marginBottom: 50, fontSize: 10, fontWeight: "bold", alignItems: "flex-end"}}>Forget Password?</Text>
+                    <Text style={{marginBottom: 40, fontSize: 10, fontWeight: "bold", alignItems: "flex-end"}}>Forget Password?</Text>
                 </TouchableOpacity>
                 <LinearGradient
                     start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
@@ -28,8 +29,9 @@ export default function SignIn() {
                     style={styles.button}>
                     <Text style={styles.text}>Login</Text>
                 </LinearGradient>
+                <Text style={[styles.text, styles.button, {color: "blue", textAlign: 'center', backgroundColor: "#ADD8E6"}]}>Connect With Facebook</Text>
             </View>
-            <View style={{flex: 1, flexDirection:'row', marginBottom: 15, justifyContent: 'center', alignItems: 'flex-end'}}>
+            <View style={{flex: 1, flexDirection:'row', paddingBottom: 55, justifyContent: 'center', alignItems: 'flex-end'}}>
                 <Text>I'm a new user, </Text>
                 <TouchableOpacity><Text style={{color: "#FF1493"}}>Sign Up</Text></TouchableOpacity>
             </View>

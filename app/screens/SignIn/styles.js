@@ -8,6 +8,7 @@ export default StyleSheet.create({
         padding: 15,
         alignItems: 'center',
         borderRadius: 15,
+        marginTop: 15,
     },
     text: {
         backgroundColor: 'transparent',
