@@ -5,7 +5,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 import OutlineInput from 'react-native-outline-input';
 import {Icon} from 'react-native-elements'
 
-export default function SignIn() {
+export default function SignIn({navigation}) {
     return (
         <View style={[styles.container]}>
             <View style={{flex: 1, marginLeft: 20, justifyContent: "center"}}>
@@ -47,7 +47,7 @@ export default function SignIn() {
                     </TouchableOpacity>
                 </View>
                 <View style={{marginTop: 40}}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.replace("Main")}>
                         <LinearGradient
                             start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
                             colors={['#FF1493', '#FF69B4', '#FFC0CB']}
@@ -76,7 +76,9 @@ export default function SignIn() {
                 alignItems: 'flex-end'
             }}>
                 <Text>I'm a new user, </Text>
-                <TouchableOpacity><Text style={{color: "#FF1493"}}>Sign Up</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.push("SignUp")}>
+                    <Text style={{color: "#FF1493"}}>Sign Up</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
