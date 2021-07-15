@@ -47,7 +47,7 @@ export default function SignIn({navigation}) {
                     </TouchableOpacity>
                 </View>
                 <View style={{marginTop: 40}}>
-                    <TouchableOpacity onPress={() => navigation.replace("Main")}>
+                    <TouchableOpacity onPress={() => navigation.push("Main")}>
                         <LinearGradient
                             start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
                             colors={['#FF1493', '#FF69B4', '#FFC0CB']}

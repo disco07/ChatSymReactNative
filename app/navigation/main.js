@@ -21,7 +21,6 @@ export default function Main() {
 function BottomTabNavigator() {
     return (
         <BottomTab.Navigator initialRouteName="Messenger"
-                             headerMode="none"
                              tabBarOptions={{
                                  showIcon: true,
                                  showLabel: true,
