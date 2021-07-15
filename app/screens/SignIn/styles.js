@@ -2,7 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: "white"
     },
     button: {
         padding: 15,
@@ -16,16 +17,8 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff',
     },
-    textInput: {
-        height: 45,
-        margin: 5,
-        borderWidth: 1,
-        borderColor: "#D3D3D3",
-        padding: 10,
-        borderRadius: 10,
-    },
     input: {
-        flex: 1,
+        flex: 2,
         marginLeft: 20,
         marginRight: 20,
         justifyContent: "center"
