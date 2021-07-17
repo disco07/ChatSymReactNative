@@ -9,6 +9,7 @@ function SearchBar({placeholder, onChangeText, value}) {
             <View style={styles.icon}>
                 <Icon name={"search-outline"} type='ionicon' iconStyle={{opacity: 0.3}} size={20} solid/>
             </View>
+
             <View style={styles.textInput}>
                 <TextInput placeholder={placeholder}
                            style={{fontSize: 20, opacity: 0.5}}
