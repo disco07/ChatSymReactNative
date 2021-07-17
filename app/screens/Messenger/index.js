@@ -1,11 +1,17 @@
-import React from 'react';
-import {Button, Text, View} from "react-native";
+import React, {useState} from 'react';
+import {KeyboardAvoidingView, Text, View} from "react-native";
+import styles from "./styles"
+import SearchBar from "../../components/SearchBar";
 
 function Messenger({navigation}) {
+    const [search, setSearch] = useState("")
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: "center"}}>
-            <Text>Messenger</Text>
-            <Button title={"message"} onPress={() => navigation.push('Messages')} />
+        <View style={styles.container}>
+            <SearchBar
+                placeholder="Search"
+                onChangeText={(e) => setSearch(e)}
+                value={search}
+            />
         </View>
     );
 }
