@@ -5,44 +5,57 @@ import {Icon} from "react-native-elements";
 import Messenger from "@screens/Messenger";
 import Messages from "@screens/Messages";
 import Settings from "@screens/Settings";
+import Profile from "@screens/Profile";
+import {Text} from "react-native";
 
-const MainStack = createStackNavigator();
+const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
-export default function Main() {
+function MessengerStack() {
     return (
-        <MainStack.Navigator>
-            <MainStack.Screen name={"BottomTabNavigator"} component={BottomTabNavigator} />
-            <MainStack.Screen name={"Messages"} component={Messages} />
-        </MainStack.Navigator>
+        <Stack.Navigator>
+            <Stack.Screen name={"Messenger"} component={Messenger} />
+            <Stack.Screen name={"Messages"} component={Messages} />
+        </Stack.Navigator>
     );
-};
+}
 
-function BottomTabNavigator() {
+function ProfileStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name={"Profile"} component={Profile} />
+        </Stack.Navigator>
+    );
+}
+
+function SettingsStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name={"Settings"} component={Settings} />
+        </Stack.Navigator>
+    );
+}
+
+export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator initialRouteName="Messenger"
-                             tabBarOptions={{
-                                 showIcon: true,
-                                 showLabel: true,
-                                 style: {borderTopWidth: 1}
-                             }}>
-            <BottomTab.Screen name={"Messenger"}
-                              component={Messenger}
-                              options={{
-                                  title: "Messages",
-                                  tabBarBadge: 3,
-                                  tabBarIcon: ({color}) => {
-                                      return <Icon color={color} name="chatbubbles-outline" type='ionicon' size={20} solid />;
-                                  },
-                              }}/>
-            <BottomTab.Screen name={"Settings"}
-                              component={Settings}
-                              options={{
-                                  title: "Settings",
-                                  tabBarIcon: ({color}) => {
-                                      return <Icon color={color} name="cog-outline" type='ionicon' size={20} solid />;
-                                  },
-                              }}/>
+                             screenOptions={({route}) => ({
+                                 headerTitle: () => <Text>Header</Text>,
+                                 tabBarIcon: ({focused, color, size}) => {
+                                     let icon;
+                                     if (route.name === "Messenger") {
+                                         icon = focused ? "chatbubbles" : "chatbubbles-outline"
+                                     } else if (route.name === "Settings") {
+                                         icon = focused ? "cog" : "cog-outline"
+                                     } else if (route.name === "Profile") {
+                                         icon = focused ? "person-circle" : "person-circle-outline"
+                                     }
+                                     return <Icon color={color} name={icon} type='ionicon' size={size} solid />;
+                                 }
+                             })}>
+            <BottomTab.Screen name={"Messenger"} component={MessengerStack}/>
+            <BottomTab.Screen name={"Settings"} component={SettingsStack}/>
+            <BottomTab.Screen name={"Profile"} component={ProfileStack}/>
         </BottomTab.Navigator>
     );
 }

@@ -6,7 +6,7 @@ import {Images} from "@config";
 const Loading = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
-            navigation.replace("SignIn");
+            navigation.replace("Auth");
         }, 500)
     }, [])
     return (

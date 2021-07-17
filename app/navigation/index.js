@@ -4,9 +4,18 @@ import {createStackNavigator} from "@react-navigation/stack";
 import Loading from "@screens/Loading/loading";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
-import Main from "./main";
+import BottomTabNavigator from "./main";
 
 const RootStack = createStackNavigator();
+
+function AuthStack() {
+    return (
+        <RootStack.Navigator headerMode={"none"}>
+            <RootStack.Screen name={"SignIn"} component={SignIn}/>
+            <RootStack.Screen name={"SignUp"} component={SignUp}/>
+        </RootStack.Navigator>
+    )
+}
 
 export default function Navigator() {
     return (
@@ -15,9 +24,8 @@ export default function Navigator() {
                                  headerMode="none"
                                  initialRouteName="Loading">
                 <RootStack.Screen name={"Loading"} component={Loading}/>
-                <RootStack.Screen name={"SignIn"} component={SignIn}/>
-                <RootStack.Screen name={"SignUp"} component={SignUp}/>
-                <RootStack.Screen name={"Main"} component={Main}/>
+                <RootStack.Screen name={"Auth"} component={AuthStack}/>
+                <RootStack.Screen name={"Main"} component={BottomTabNavigator}/>
             </RootStack.Navigator>
         </NavigationContainer>
     );

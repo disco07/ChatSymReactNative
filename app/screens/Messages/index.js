@@ -3,7 +3,7 @@ import {Text, View} from "react-native";
 
 function Messages({navigation}) {
     return (
-        <View><Text>Message</Text></View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: "center"}}><Text>Message</Text></View>
     );
 }
 
