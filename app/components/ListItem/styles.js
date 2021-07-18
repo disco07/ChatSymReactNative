@@ -13,6 +13,7 @@ export default StyleSheet.create({
         height: 60,
     },
     detail: {
+        flex: 1.5,
         flexDirection: "column",
         paddingLeft: 5,
     }

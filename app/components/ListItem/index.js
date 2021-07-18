@@ -18,6 +18,9 @@ function ListItem({data}) {
                         <Text style={{opacity: 0.5}}>{item.message}</Text>
                     </View>
                 </View>
+                <View style={{flex: 0.3}}>
+                    <Text style={{opacity: 0.5}}>{item.date}</Text>
+                </View>
             </View>
         )} />
     );
