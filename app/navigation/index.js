@@ -5,6 +5,7 @@ import Loading from "@screens/Loading/loading";
 import SignIn from "@screens/SignIn";
 import SignUp from "@screens/SignUp";
 import BottomTabNavigator from "./main";
+import {StatusBar} from "expo-status-bar";
 
 const RootStack = createStackNavigator();
 
@@ -20,6 +21,7 @@ function AuthStack() {
 export default function Navigator() {
     return (
         <NavigationContainer>
+            <StatusBar barStyle = "dark-content" hidden = {false} translucent = {true}/>
             <RootStack.Navigator mode="modal"
                                  headerMode="none"
                                  initialRouteName="Loading">
