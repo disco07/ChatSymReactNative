@@ -15,7 +15,7 @@ function ListItem({data}) {
                         <Text style={{fontWeight: 'bold', fontSize: 17}}>{item.firstName} {item.lastName}</Text>
                     </View>
                     <View>
-                        <Text style={{opacity: 0.5}}>{item.message.length > 68 ? item.message.slice(0, 68) + "..." : item.message}</Text>
+                        <Text style={{opacity: 0.5}}>{item.message.length > 68 ? item.message.slice(0, 69) + "..." : item.message}</Text>
                     </View>
                 </View>
                 <View style={{flex: 0.3, justifyContent: 'center', alignItems: 'center'}}>
