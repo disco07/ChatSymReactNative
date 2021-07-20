@@ -18,8 +18,9 @@ function ListItem({data}) {
                         <Text style={{opacity: 0.5}}>{item.message}</Text>
                     </View>
                 </View>
-                <View style={{flex: 0.3}}>
+                <View style={{flex: 0.3, justifyContent: 'center', alignItems: 'center'}}>
                     <Text style={{opacity: 0.5}}>{item.date}</Text>
+                    <View style={styles.badge}><Text>{item.id}</Text></View>
                 </View>
             </View>
         )} />

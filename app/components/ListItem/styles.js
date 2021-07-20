@@ -16,5 +16,12 @@ export default StyleSheet.create({
         flex: 1.5,
         flexDirection: "column",
         paddingLeft: 5,
+    },
+    badge: {
+        backgroundColor: "lightblue",
+        borderRadius: 50,
+        width: 20,
+        alignItems: "center",
+        justifyContent: "center"
     }
 })
