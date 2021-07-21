@@ -3,17 +3,16 @@ import {StyleSheet} from "react-native";
 export default StyleSheet.create({
     container: {
         flexDirection: "row",
-        height: 65,
+        height: 75,
     },
     contentLeft: {
         flex: 1,
         justifyContent: 'center',
         paddingHorizontal: 20,
-        width: 60,
     },
     contentCenter: {
         flex: 2,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
     },
     contentRight: {

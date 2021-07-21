@@ -12,11 +12,11 @@ function Header({title, onPressLeft, onPressRight, onPressRightSecond, renderLef
             <View style={styles.container}>
                 <View style={{flex: 1}}>
                     <TouchableOpacity style={styles.contentLeft} onPress={onPressLeft}>
-                        {renderLeft}
+                        {renderLeft()}
                     </TouchableOpacity>
                 </View>
                 <View style={[styles.contentCenter]}>
-                    <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                    <Text style={{fontSize: 30, fontWeight: 'bold'}}>
                         {title}
                     </Text>
                 </View>
@@ -24,12 +24,12 @@ function Header({title, onPressLeft, onPressRight, onPressRightSecond, renderLef
                     <TouchableOpacity
                         style={[styles.contentRightSecond]}
                         onPress={onPressRightSecond}>
-                        {renderRightSecond}
+                        {renderRightSecond()}
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={[styles.contentRight]}
                         onPress={onPressRight}>
-                        {renderRight}
+                        {renderRight()}
                     </TouchableOpacity>
                 </View>
             </View>
