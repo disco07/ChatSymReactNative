@@ -13,7 +13,7 @@ const BottomTab = createBottomTabNavigator();
 
 function MessengerStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator headerMode="none">
             <Stack.Screen name={"Messenger"} component={Messenger} />
             <Stack.Screen name={"Messages"} component={Messages} />
         </Stack.Navigator>

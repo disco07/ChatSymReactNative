@@ -62,6 +62,7 @@ export default function SignIn({navigation}) {
                             passiveBorderColor="#bbb7ff"
                             passiveLabelColor="#bbb7ff"
                             passiveValueColor="#bbb7ff"
+                            secureTextEntry={true}
                         />
                     </View>
                     <View style={{
@@ -80,7 +81,7 @@ export default function SignIn({navigation}) {
                             <LinearGradient
                                 start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 0.0}}
                                 colors={['#FF1493', '#FF69B4', '#FFC0CB']}
-                                style={styles.button}>
+                                style={[styles.button, {borderWidth: 1}]}>
                                 <Text style={styles.text}>Login</Text>
                             </LinearGradient>
                         </TouchableOpacity>
@@ -89,7 +90,8 @@ export default function SignIn({navigation}) {
                                 color: "blue",
                                 flexDirection: "row",
                                 justifyContent: 'center',
-                                backgroundColor: "#ADD8E6"
+                                backgroundColor: "#ADD8E6",
+                                borderWidth: 1
                             }]}>
                                 <Text><Icon color={'blue'} name="facebook"/></Text>
                                 <Text style={{color: "blue"}}>Connect With Facebook</Text>

@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar";
 import UserAvatar from "../../components/UserAvatar";
 import {Images} from "@config";
 import ListItem from "../../components/ListItem";
+import Header from "../../components/Header";
 
 function Messenger({navigation}) {
     const [search, setSearch] = useState("")
@@ -76,19 +77,19 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
+            <Header />
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
                 <SearchBar
                     placeholder="Search"
                     onChangeText={(e) => setSearch(e)}
-                    value={search}
-                />
+                    value={search}/>
                 <View>
                     <UserAvatar data={data}/>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={{marginTop: 10}}>
-                        <ListItem data={data}/>
+                        <ListItem data={data} navigation={navigation}/>
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>
