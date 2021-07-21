@@ -1,19 +1,39 @@
 import React, {useEffect} from 'react';
-import {StatusBar, Text, View} from "react-native";
+import {SafeAreaView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import styles from "./styles";
-import {Icon} from "react-native-elements";
 
-function Header(props) {
+function Header({title, onPressLeft, onPressRight, onPressRightSecond, renderLeft, renderRightSecond, renderRight}) {
 
     useEffect(() => {
         StatusBar.setBarStyle('dark-content', true);
-    },[]);
+    }, []);
     return (
-        <View style={styles.container}>
-            <View style={styles.contentLeft}>
-                <Icon name="chevron-back-outline" type="ionicon" size={20} solid />
+        <SafeAreaView>
+            <View style={styles.container}>
+                <View style={{flex: 1}}>
+                    <TouchableOpacity style={styles.contentLeft} onPress={onPressLeft}>
+                        {renderLeft}
+                    </TouchableOpacity>
+                </View>
+                <View style={[styles.contentCenter]}>
+                    <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                        {title}
+                    </Text>
+                </View>
+                <View style={styles.right}>
+                    <TouchableOpacity
+                        style={[styles.contentRightSecond]}
+                        onPress={onPressRightSecond}>
+                        {renderRightSecond}
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[styles.contentRight]}
+                        onPress={onPressRight}>
+                        {renderRight}
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 

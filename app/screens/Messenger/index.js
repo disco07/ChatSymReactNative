@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {KeyboardAvoidingView, Platform, ScrollView, View} from "react-native";
+import {Image, KeyboardAvoidingView, Platform, ScrollView, View} from "react-native";
 import styles from "./styles"
 import SearchBar from "../../components/SearchBar";
 import UserAvatar from "../../components/UserAvatar";
@@ -77,7 +77,11 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
-            <Header />
+            <Header title="Chats" renderLeft={() => {
+                return (
+                    <Image source={data[2].image} style={{height: 50}}/>
+                )
+            }}/>
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
                 <SearchBar
