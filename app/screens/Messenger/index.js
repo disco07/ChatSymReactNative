@@ -86,7 +86,7 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
-            <Header title="Chats" renderLeft={() => {
+            <Header title="Chats" stylesContentLeft={{paddingHorizontal: 20}} renderLeft={() => {
                 return (
                     <Image source={data[2].image}
                            style={{height: 50, width: 50, borderWidth: 1, borderColor: "#000", borderRadius: 50}}/>

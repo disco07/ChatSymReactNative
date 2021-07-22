@@ -9,5 +9,6 @@ export const Images = {
     avatarMale1: require('@assets/images/avatar-male-1.jpg'),
     avatarMale2: require('@assets/images/avatar-male-2.jpg'),
     avatarMale3: require('@assets/images/avatar-male-3.jpg'),
-    avatarMale4: require('@assets/images/avatar-male-4.jpg')
+    avatarMale4: require('@assets/images/avatar-male-4.jpg'),
+    leftArrow: require('@assets/images/left-arrow.png'),
 }
