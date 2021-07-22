@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {Image, KeyboardAvoidingView, Platform, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {
+    FlatList,
+    Image,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView,
+    TouchableWithoutFeedback,
+    View
+} from "react-native";
 import styles from "./styles"
 import SearchBar from "../../components/SearchBar";
 import UserAvatar from "../../components/UserAvatar";
@@ -102,16 +110,19 @@ function Messenger({navigation}) {
             }}/>
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
-                <SearchBar
-                    placeholder="Search"
-                    onChangeText={(e) => setSearch(e)}
-                    value={search}/>
-                <View>
-                    <UserAvatar data={data}/>
-                </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
+                    <SearchBar
+                        placeholder="Search"
+                        onChangeText={(e) => setSearch(e)}
+                        value={search}/>
+                    <UserAvatar data={data} user={data[2].image}/>
                     <View style={{marginTop: 10}}>
-                        <ListItem data={data} navigation={navigation}/>
+                        <FlatList
+                            data={data}
+                            keyExtractor={item => item.id}
+                            renderItem={({item}) => (
+                                <ListItem data={item} navigation={navigation}/>
+                            )}/>
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>

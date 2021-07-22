@@ -1,24 +1,41 @@
 import React from 'react';
-import {FlatList, Image, ScrollView, Text, View} from "react-native";
+import {FlatList, Image, ScrollView, Text, TouchableWithoutFeedback, View} from "react-native";
 import styles from "./styles"
+import {Icon} from "react-native-elements";
 
-function UserAvatar({data}) {
+function UserAvatar({data, user}) {
     return (
-        <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={data}
-            keyExtractor={item => item.id}
-            renderItem={({item}) => (
-                <View>
-                    <View style={styles.container}>
-                        <Image source={item.image} style={styles.image}/>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={{flexDirection: "row"}}>
+                <TouchableWithoutFeedback onPress={() => alert('hello')}>
+                    <View>
+                        <View style={[styles.containerImage, {borderWidth: 2, borderColor: 'lightgrey',}]}>
+                            <Image source={user}
+                                   style={[styles.image, {borderWidth: 2, borderColor: "white",}]}/>
+                        </View>
+                        <View style={styles.Icon}>
+                            <Icon backgroundColor='#fff' borderRadius="50" name="add-circle" type='ionicon' size={30}
+                                  solid/>
+                        </View>
                     </View>
-                    <View style={styles.name}>
-                        <Text>{item.name}</Text>
-                    </View>
-                </View>
-            )}/>
+                </TouchableWithoutFeedback>
+                {
+                    data.map((item, index) => {
+                        return (
+                            <View key={index}>
+                                <View style={[styles.container, {borderWidth: 2, borderColor: 'red',}]}>
+                                    <Image source={item.image}
+                                           style={[styles.image, {borderWidth: 2, borderColor: "white",}]}/>
+                                </View>
+                                <View style={styles.name}>
+                                    <Text>{item.firstName}</Text>
+                                </View>
+                            </View>
+                        )
+                    })
+                }
+            </View>
+        </ScrollView>
     );
 }
 
