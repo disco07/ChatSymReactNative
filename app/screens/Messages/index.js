@@ -75,12 +75,33 @@ function Messages({navigation}) {
     ])
     return (
         <View style={styles.container}>
-            <Header title="Chats" renderLeft={() => {
-                return (
-                    <Image source={Images.leftArrow}
-                           style={{height: 40, width: 40}}/>
+            <Header renderCenter={
+                () => (
+                    <>
+                        <View>
+                            <Image source={data[2].image}
+                                   style={{
+                                       height: 40,
+                                       width: 40,
+                                       borderWidth: 1,
+                                       borderColor: "#000",
+                                       borderRadius: 50
+                                   }}/>
+                        </View>
+                        <View>
+                            <Text>{data[2].firstName}</Text>
+                        </View>
+                    </>
                 )
-            }} renderRight={() => {
+            }
+                    onPressLeft={() => navigation.goBack()}
+                    stylesContentLeft={{paddingHorizontal: 10}}
+                    renderLeft={() => {
+                        return (
+                            <Image source={Images.leftArrow}
+                                   style={{height: 25, width: 25}}/>
+                        )
+                    }} renderRight={() => {
                 return <Icon color={"#000"}
                              name="create-outline"
                              type='ionicon'

@@ -2,11 +2,23 @@ import React, {useEffect} from 'react';
 import {SafeAreaView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import styles from "./styles";
 
-function Header({title, onPressLeft, onPressRight, stylesContentLeft, onPressRightSecond, renderLeft, renderRightSecond, renderRight}) {
+export default function Header(props) {
+    const {
+        stylesCenter,
+        renderCenter = () => {},
+        onPressLeft = () => {},
+        onPressRight = () => {},
+        stylesContentLeft,
+        onPressRightSecond = () => {},
+        renderLeft = () => {},
+        renderRightSecond = () => {},
+        renderRight = () => {}
+    } = props;
 
     useEffect(() => {
         StatusBar.setBarStyle('dark-content', true);
     }, []);
+
     return (
         <SafeAreaView>
             <View style={styles.container}>
@@ -15,9 +27,9 @@ function Header({title, onPressLeft, onPressRight, stylesContentLeft, onPressRig
                         {renderLeft()}
                     </TouchableOpacity>
                 </View>
-                <View style={[styles.contentCenter]}>
+                <View style={[styles.contentCenter, stylesCenter]}>>
                     <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-                        {title}
+                        {renderCenter()}
                     </Text>
                 </View>
                 <View style={styles.right}>
@@ -36,5 +48,3 @@ function Header({title, onPressLeft, onPressRight, stylesContentLeft, onPressRig
         </SafeAreaView>
     );
 }
-
-export default Header;

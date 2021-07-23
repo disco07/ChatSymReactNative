@@ -11,9 +11,9 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     contentCenter: {
-        flex: 2,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
+        flexDirection: "row",
+        alignItems: 'center',
+        justifyContent: 'flex-start',
     },
     contentRight: {
         justifyContent: 'center',
@@ -30,7 +30,7 @@ export default StyleSheet.create({
         height: '100%',
     },
     right: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'flex-end',
