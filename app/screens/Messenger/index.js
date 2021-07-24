@@ -111,6 +111,7 @@ function Messenger({navigation}) {
                              borderRadius={30}
                              solid/>
             }}/>
+            
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
                 <ScrollView showsVerticalScrollIndicator={false}>
