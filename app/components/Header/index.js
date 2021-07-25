@@ -20,7 +20,7 @@ export default function Header(props) {
     }, []);
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <View style={styles.container}>
                 <View style={{flex: 1}}>
                     <TouchableOpacity style={[styles.contentLeft, stylesContentLeft]} onPress={onPressLeft}>

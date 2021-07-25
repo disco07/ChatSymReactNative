@@ -86,31 +86,6 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
-            <Header renderCenter={() => "Chats"}
-                    stylesContentLeft={{paddingHorizontal: 20}}
-                    stylesCenter={{flex: 3,}}
-                    renderLeft={() => {
-                return (
-                    <Image source={data[2].image}
-                           style={{height: 50, width: 50, borderWidth: 1, borderColor: "#000", borderRadius: 50}}/>
-                )
-            }} renderRight={() => {
-                return <Icon color={"#000"}
-                             name="create-outline"
-                             type='ionicon'
-                             size={30}
-                             backgroundColor={'#F5F5F5'}
-                             borderRadius={30}
-                             solid/>;
-            }} renderRightSecond={() => {
-                return <Icon color={"#000"}
-                             name="camera"
-                             type='ionicon'
-                             size={30}
-                             backgroundColor={'#F5F5F5'}
-                             borderRadius={30}
-                             solid/>
-            }}/>
             
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>

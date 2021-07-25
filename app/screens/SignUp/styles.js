@@ -18,7 +18,6 @@ export default StyleSheet.create({
         color: '#fff',
     },
     input: {
-        flex: 2,
         marginLeft: 20,
         marginRight: 20,
         justifyContent: "center"
