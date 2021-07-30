@@ -20,6 +20,14 @@ function Messenger({navigation}) {
     const [search, setSearch] = useState("")
     const [data] = useState([
         {
+            id: "2",
+            firstName: "Rokia",
+            lastName: "Koné",
+            date: "11:05",
+            message: "Bonjour mon fils ca va ?",
+            image: Images.avatarFemale3
+        },
+        {
             id: "1",
             firstName: "Yarie",
             lastName: "Sylla",
