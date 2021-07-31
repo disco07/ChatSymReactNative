@@ -8,7 +8,6 @@ export default StyleSheet.create({
     contentLeft: {
         flex: 1,
         justifyContent: 'center',
-        paddingHorizontal: 20,
     },
     contentCenter: {
         flexDirection: "row",
@@ -18,8 +17,6 @@ export default StyleSheet.create({
     contentRight: {
         justifyContent: 'center',
         alignItems: 'flex-end',
-        paddingLeft: 10,
-        paddingRight: 20,
         height: '100%',
     },
     contentRightSecond: {

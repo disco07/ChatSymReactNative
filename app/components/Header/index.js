@@ -1,18 +1,23 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, StatusBar, Text, TouchableOpacity, View} from "react-native";
+import {Image, StatusBar, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import styles from "./styles";
+import {Icon} from "react-native-elements";
 
 export default function Header(props) {
     const {
         stylesCenter,
-        renderCenter = () => {},
-        onPressLeft = () => {},
-        onPressRight = () => {},
+        renderCenter = () => {
+        },
+        onPressLeft,
+        onPressRight,
         stylesContentLeft,
-        onPressRightSecond = () => {},
-        renderLeft = () => {},
-        renderRightSecond = () => {},
-        renderRight = () => {}
+        onPressRightSecond,
+        renderLeft = () => {
+        },
+        renderRightSecond = () => {
+        },
+        renderRight = () => {
+        },
     } = props;
 
     useEffect(() => {
@@ -20,31 +25,27 @@ export default function Header(props) {
     }, []);
 
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.container}>
-                <View style={{flex: 1}}>
-                    <TouchableOpacity style={styles.contentLeft} onPress={onPressLeft}>
-                        {renderLeft()}
-                    </TouchableOpacity>
+        <View style={styles.container}>
+            <TouchableWithoutFeedback onPress={onPressLeft}>
+                <View style={[styles.contentLeft, stylesContentLeft]}>
+                    {renderLeft()}
                 </View>
-                <View style={[styles.contentCenter, stylesCenter]}>>
-                    <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-                        {renderCenter()}
-                    </Text>
-                </View>
-                <View style={styles.right}>
-                    <TouchableOpacity
-                        style={[styles.contentRightSecond]}
-                        onPress={onPressRightSecond}>
-                        {renderRightSecond()}
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.contentRight]}
-                        onPress={onPressRight}>
-                        {renderRight()}
-                    </TouchableOpacity>
-                </View>
+            </TouchableWithoutFeedback>
+            <View style={[styles.contentCenter, {flex: 5, justifyContent: "flex-start"}]}>
+                {renderCenter()}
             </View>
-        </SafeAreaView>
+            <View style={styles.right}>
+                <TouchableWithoutFeedback onPress={onPressRight}>
+                    <View style={styles.contentRight}>
+                        {renderRight()}
+                    </View>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={onPressRightSecond}>
+                    <View style={styles.contentRightSecond}>
+                        {renderRightSecond()}
+                    </View>
+                </TouchableWithoutFeedback>
+            </View>
+        </View>
     );
 }

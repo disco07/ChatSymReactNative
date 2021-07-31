@@ -4,7 +4,7 @@ import {
     Image,
     KeyboardAvoidingView,
     Platform,
-    ScrollView,
+    ScrollView, Text,
     TouchableWithoutFeedback,
     View
 } from "react-native";
@@ -94,7 +94,22 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
-
+            <Header stylesContentLeft={{paddingHorizontal: 20}}
+                    renderLeft={() => <Image source={data[3].image}
+                                             style={{
+                                                 height: 50,
+                                                 width: 50,
+                                                 borderWidth: 1,
+                                                 borderColor: "#000",
+                                                 borderRadius: 50
+                                             }}/>}
+                    renderCenter={() => <Text style={{fontWeight: "700", fontSize: 25}}>Chats</Text>}
+                    renderRight={() => <Text>
+                        <Icon name={"camera"} type='ionicon' size={25} solid/>
+                    </Text>}
+                    renderRightSecond={() => <Text>
+                        <Icon name={"person-add"} type='ionicon' size={25} solid/>
+                    </Text>}/>
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
                 <ScrollView showsVerticalScrollIndicator={false}>
