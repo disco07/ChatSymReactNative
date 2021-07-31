@@ -20,7 +20,7 @@ function Messenger({navigation}) {
     const [search, setSearch] = useState("")
     const [data] = useState([
         {
-            id: "2",
+            id: "11",
             firstName: "Rokia",
             lastName: "Koné",
             date: "11:05",
@@ -94,7 +94,7 @@ function Messenger({navigation}) {
     ])
     return (
         <View style={styles.container}>
-            
+
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
                                   style={{flex: 1}}>
                 <ScrollView showsVerticalScrollIndicator={false}>

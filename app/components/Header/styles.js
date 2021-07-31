@@ -4,11 +4,11 @@ export default StyleSheet.create({
     container: {
         flexDirection: "row",
         height: 75,
-        width: "100%",
     },
     contentLeft: {
         flex: 1,
         justifyContent: 'center',
+        paddingHorizontal: 20,
     },
     contentCenter: {
         flexDirection: "row",

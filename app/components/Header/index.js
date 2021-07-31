@@ -23,7 +23,7 @@ export default function Header(props) {
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
                 <View style={{flex: 1}}>
-                    <TouchableOpacity style={[styles.contentLeft, stylesContentLeft]} onPress={onPressLeft}>
+                    <TouchableOpacity style={styles.contentLeft} onPress={onPressLeft}>
                         {renderLeft()}
                     </TouchableOpacity>
                 </View>
