@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
-import {Image, StatusBar, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
+import {SafeAreaView, StatusBar, TouchableWithoutFeedback, View} from "react-native";
 import styles from "./styles";
-import {Icon} from "react-native-elements";
 
 export default function Header(props) {
     const {
@@ -22,6 +21,7 @@ export default function Header(props) {
 
     useEffect(() => {
         StatusBar.setBarStyle('dark-content', true);
+        console.log(StatusBar.currentHeight)
     }, []);
 
     return (
