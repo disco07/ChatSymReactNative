@@ -107,6 +107,11 @@ function Messages({navigation}) {
                 renderRightSecond={() => <Text>
                     <Icon name={"videocam"} type='ionicon' size={25} solid/>
                 </Text>}/>
+                <ScrollView>
+                    <View>
+                        
+                    </View>
+                </ScrollView>
         </View>
     );
 }
