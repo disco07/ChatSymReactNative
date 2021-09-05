@@ -9,6 +9,7 @@ export default StyleSheet.create({
     inputGroup: {
         display: 'flex',
         flexDirection: 'row',
+        alignItems: 'center',
         width: '100%',
     }
 })

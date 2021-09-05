@@ -126,9 +126,9 @@ function Messages({navigation}) {
                 <View style={{marginRight: 8}}>
                     <Icon name={"mic"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
                 </View>
-                <View style={styles.inputGroup}>
+                <View style={[styles.inputGroup, {borderWidth: 1, borderRadius: 30}]}>
                     <View>
-                        <TextInput placeholder={'Send a message...'} style={{fontSize: 18, opacity: 0.5, flex: 1}}/>
+                        <TextInput placeholder={'Send a message...'} style={{fontSize: 18, opacity: 0.5, marginLeft: 10}}/>
                     </View>
                     <View>
                         <Icon name={"happy"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
