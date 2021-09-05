@@ -5,6 +5,7 @@ import {Images} from "@config";
 import Header from "../../components/Header";
 import {Icon} from "react-native-elements";
 import Bubble from "../../components/Bubble";
+import InputMessage from "../../components/InputMessage";
 
 function Messages({navigation}) {
     const [data] = useState([
@@ -113,31 +114,7 @@ function Messages({navigation}) {
                 <Bubble data={data}/>
                 <Bubble data={data} me={'me'}/>
             </ScrollView>
-            <View style={styles.inputGroup}>
-                <View style={{marginRight: 8}}>
-                    <Icon name={"add-circle"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
-                <View style={{marginRight: 8}}>
-                    <Icon name={"camera"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
-                <View style={{marginRight: 8}}>
-                    <Icon name={"image"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
-                <View style={{marginRight: 8}}>
-                    <Icon name={"mic"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
-                <View style={[styles.inputGroup, {borderWidth: 1, borderRadius: 30}]}>
-                    <View>
-                        <TextInput placeholder={'Send a message...'} style={{fontSize: 18, opacity: 0.5, marginLeft: 10}}/>
-                    </View>
-                    <View>
-                        <Icon name={"happy"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                    </View>
-                </View>
-                <View style={{marginRight: 8}}>
-                    <Icon name={"thumbs-up"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
-            </View>
+            <InputMessage />
         </View>
     );
 }
