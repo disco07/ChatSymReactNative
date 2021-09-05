@@ -13,7 +13,7 @@ function Messages({navigation}) {
             firstName: "Rokia",
             lastName: "Koné",
             date: "11:05",
-            message: "Bonjour mon fils ca va ?",
+            message: "Bonjour mon fils ca va ? Ca fait longtemps",
             image: Images.avatarFemale3
         },
         {
@@ -111,6 +111,7 @@ function Messages({navigation}) {
 
                 <ScrollView style={[styles.container]}>
                     <Bubble data={data} />
+                    <Bubble data={data} me={'me'}/>
                 </ScrollView>
         </View>
     );

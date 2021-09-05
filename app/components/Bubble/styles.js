@@ -6,9 +6,10 @@ export default StyleSheet.create({
         textAlign: 'center',
         padding: 5,
         borderRadius: 10,
-        backgroundColor: '#f1f1f2'
     },
     messageContent: {
-        fontSize: 18
+        fontSize: 18,
+        fontWeight: '400',
+        maxWidth: 250
     }
 })
