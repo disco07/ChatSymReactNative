@@ -4,6 +4,7 @@ import styles from './styles';
 import {Images} from "@config";
 import Header from "../../components/Header";
 import {Icon} from "react-native-elements";
+import Bubble from "../../components/Bubble";
 
 function Messages({navigation}) {
     const [data] = useState([
@@ -109,9 +110,7 @@ function Messages({navigation}) {
                 </Text>}/>
 
                 <ScrollView style={[styles.container]}>
-                    <View>
-                        <Text>{data[0].firstName}</Text>
-                    </View>
+                    <Bubble data={data} />
                 </ScrollView>
         </View>
     );

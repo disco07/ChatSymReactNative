@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, StatusBar, TouchableWithoutFeedback, View} from "react-native";
+import {StatusBar, TouchableWithoutFeedback, View} from "react-native";
 import styles from "./styles";
 
 export default function Header(props) {
     const {
-        stylesCenter,
         renderCenter = () => {
         },
         onPressLeft,
