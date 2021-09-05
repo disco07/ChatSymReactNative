@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, View} from "react-native";
+import {Image, ScrollView, Text, View} from "react-native";
 import styles from './styles';
 import {Images} from "@config";
 import Header from "../../components/Header";
@@ -107,9 +107,10 @@ function Messages({navigation}) {
                 renderRightSecond={() => <Text>
                     <Icon name={"videocam"} type='ionicon' size={25} solid/>
                 </Text>}/>
-                <ScrollView>
+
+                <ScrollView style={[styles.container]}>
                     <View>
-                        
+                        <Text>{data[0].firstName}</Text>
                     </View>
                 </ScrollView>
         </View>

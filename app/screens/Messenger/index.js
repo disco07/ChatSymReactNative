@@ -33,7 +33,7 @@ function Messenger({navigation}) {
             firstName: "Yarie",
             lastName: "Sylla",
             date: "10:45",
-            message: "Bonjour mon bébé ca va ?Bonjour mon bébé ca va ?Bonjour mon bébé ca va ?Bonjour mon bébé ca va ?Bonjour mon bébé ca va ?Bonjour mon bébé ca va ?",
+            message: "Bonjour mon Yarie ca va ?Bonjour mon Yarie ca va ?Bonjour mon Yarie ca va ?Bonjour mon Yarie ca va ?Bonjour mon Yarie ca va ?Bonjour mon Yarie ca va ?",
             image: Images.avatarFemale1
         },
         {
