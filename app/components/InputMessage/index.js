@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from "../../screens/Messages/styles";
 import {Icon} from "react-native-elements";
-import {TextInput, View} from "react-native";
+import {KeyboardAvoidingView, Platform, TextInput, View} from "react-native";
 
 const InputMessage = () => {
     return (
-        <View style={styles.inputGroup}>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.inputGroup}>
             <View style={{marginRight: 8}}>
                 <Icon name={"add-circle"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
             </View>
@@ -29,7 +31,7 @@ const InputMessage = () => {
             <View style={{marginLeft: 10}}>
                 <Icon name={"thumbs-up"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 };
 

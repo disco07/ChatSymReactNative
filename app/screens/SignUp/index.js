@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import {KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import styles from "./styles";
 import OutlineInput from "react-native-outline-input";
 import {LinearGradient} from "expo-linear-gradient";
@@ -8,7 +8,9 @@ import {Icon} from "react-native-elements";
 function SignUp({navigation}) {
     return (
         <SafeAreaView style={[styles.container]}>
-            <View style={[styles.container]}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : "height"}
+                style={[styles.container]}>
                 <View style={{flex: 0.5, marginLeft: 20, justifyContent: "center"}}>
                     <Text style={{fontSize: 25, fontWeight: "bold"}}>Create account,</Text>
                     <Text style={{fontSize: 25, opacity: 0.5}}>Sign up to get started!</Text>
@@ -93,7 +95,7 @@ function SignUp({navigation}) {
                         <Text style={{color: "#FF1493"}}>Sign In</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }

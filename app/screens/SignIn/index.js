@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {
     Keyboard,
     KeyboardAvoidingView,
-    Platform,
+    Platform, ScrollView,
     Text,
     TouchableOpacity,
     TouchableWithoutFeedback,
@@ -16,27 +16,16 @@ import {Icon} from 'react-native-elements'
 export default function SignIn({navigation}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [keyboardStatus, setKeyboardStatus] = useState(false);
-
-    useEffect(() => {
-        Keyboard.addListener("keyboardDidShow", _keyboardDidShow);
-        Keyboard.addListener("keyboardDidHide", _keyboardDidHide);
-        // cleanup function
-        return () => {
-            Keyboard.removeListener("keyboardDidShow", _keyboardDidShow);
-            Keyboard.removeListener("keyboardDidHide", _keyboardDidHide);
-        };
-    }, []);
-    const _keyboardDidShow = () => Platform.OS === "android" && setKeyboardStatus(true);
-    const _keyboardDidHide = () => Platform.OS === "android" && setKeyboardStatus(false);
 
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={[styles.container]}>
-                <View style={{flex: 1, marginLeft: 20, justifyContent: "center"}}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : "height"}
+                style={[styles.container]}>
+                <View style={{flex: 0.5, marginLeft: 20, justifyContent: "center"}}>
                     <Text style={{fontSize: 25, fontWeight: "bold"}}>Welcome,</Text>
                     <Text style={{fontSize: 25, opacity: 0.5}}>Sign in to continue!</Text>
                 </View>
+                <ScrollView style={{flex: 4}}>
                 <View style={styles.input}>
                     <View>
                         <OutlineInput
@@ -99,10 +88,9 @@ export default function SignIn({navigation}) {
                         </TouchableOpacity>
                     </View>
                 </View>
-                {
-                    keyboardStatus === false &&
+                </ScrollView>
                 <View style={{
-                    flex: 1,
+                    flex: 0.1,
                     flexDirection: 'row',
                     paddingBottom: 45,
                     justifyContent: 'center',
@@ -113,8 +101,6 @@ export default function SignIn({navigation}) {
                         <Text style={{color: "#FF1493"}}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
-                }
-            </View>
-        </TouchableWithoutFeedback>
+            </KeyboardAvoidingView>
     );
 };
