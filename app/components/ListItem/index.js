@@ -18,7 +18,7 @@ function ListItem({data, navigation}) {
                 </View>
                 <View style={{flex: 0.3, justifyContent: 'center', alignItems: 'center'}}>
                     <Text style={{opacity: 0.5}}>{data.date}</Text>
-                    <View style={styles.badge}><Text>{data.id}</Text></View>
+                    {data.unread > 0 && <View style={styles.badge}><Text>{data.unread}</Text></View>}
                 </View>
             </View>
         </TouchableOpacity>

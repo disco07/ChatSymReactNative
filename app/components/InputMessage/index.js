@@ -1,36 +1,24 @@
 import React from 'react';
-import styles from "../../screens/Messages/styles";
-import {Icon} from "react-native-elements";
+import styles from './styles';
 import {KeyboardAvoidingView, Platform, TextInput, View} from "react-native";
+import InputMessageIcon from "../inputMessageIcon";
 
 const InputMessage = () => {
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.inputGroup}>
-            <View style={{marginRight: 8}}>
-                <Icon name={"add-circle"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-            </View>
-            <View style={{marginRight: 8}}>
-                <Icon name={"camera"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-            </View>
-            <View style={{marginRight: 8}}>
-                <Icon name={"image"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-            </View>
-            <View style={{marginRight: 8}}>
-                <Icon name={"mic"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-            </View>
-            <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', backgroundColor: '#f1f1f2', borderWidth: 1, borderRadius: 30}}>
+            <InputMessageIcon name={"add-circle"} />
+            <InputMessageIcon name={"camera"} />
+            <InputMessageIcon name={"image"} />
+            <InputMessageIcon name={"mic"} />
+            <View style={styles.input}>
                 <View>
                     <TextInput placeholder={'Send a message...'} style={{fontSize: 18, opacity: 0.5, marginLeft: 10}}/>
                 </View>
-                <View>
-                    <Icon name={"happy"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-                </View>
+                <InputMessageIcon name={"happy"} />
             </View>
-            <View style={{marginLeft: 10}}>
-                <Icon name={"thumbs-up"} type='ionicon' iconStyle={{color: '#4898ff'}} size={30} solid/>
-            </View>
+            <InputMessageIcon name={"thumbs-up"} />
         </KeyboardAvoidingView>
     );
 };

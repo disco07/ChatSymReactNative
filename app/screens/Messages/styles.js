@@ -5,11 +5,5 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         padding: 10
-    },
-    inputGroup: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        width: '100%',
     }
 })
