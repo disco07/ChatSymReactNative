@@ -4,6 +4,7 @@ import styles from "./styles"
 import {Icon} from "react-native-elements";
 
 function UserAvatar({data, user}) {
+    const borderRadius = 50;
     return (
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={{flexDirection: "row"}}>
@@ -14,7 +15,7 @@ function UserAvatar({data, user}) {
                                    style={[styles.image, {borderWidth: 2, borderColor: "white",}]}/>
                         </View>
                         <View style={styles.Icon}>
-                            <Icon backgroundColor='#fff' borderRadius="50" name="add-circle" type='ionicon' size={30}
+                            <Icon backgroundColor='#fff' borderRadius={borderRadius} name="add-circle" type='ionicon' size={30}
                                   solid/>
                         </View>
                     </View>

@@ -41,8 +41,7 @@ function Messenger({navigation}) {
                         renderRightSecond={() => <Text>
                             <Icon name={"person-add"} type='ionicon' size={25} solid/>
                         </Text>}/>
-                <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}
-                                      style={{flex: 1}}>
+                <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null} style={{flex: 1}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <SearchBar
                             placeholder="Search"
