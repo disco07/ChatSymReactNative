@@ -6,4 +6,5 @@ export default StyleSheet.create({
         backgroundColor: 'white',
         padding: 10
     }
+    
 })
